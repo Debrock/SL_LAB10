@@ -1,14 +1,16 @@
-<form action="/">
+
     <div id="newinput">
+        <div id="inputdataid">
+            <input [(ngModel)]="i" type="text" placeholder="Id">
+         </div>
        <div id="inputdata">
-           <input [(ngModel)]="newTask.d" type="text" placeholder="Date">
+           <input [(ngModel)]="d" type="text" placeholder="Date">
         </div>
        <div id="inputdata">
-           <input [(ngModel)]="newTask.t" type="text" placeholder="Time">
+           <input [(ngModel)]="t" type="text" placeholder="Task">
         </div>
        <div id="inputdata">
-           <input [(ngModel)]="newTask.ds" type="text" placeholder="Description">
+           <input [(ngModel)]="ds" type="text" placeholder="Description">
         </div>
-       <button (click)="addToList()">ADD TASK</button>
+       <button (click)="addToList()" type="reset">ADD TASK</button>
     </div>
-</form>

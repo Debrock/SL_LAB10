@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoDatabaseService } from '../todo-database.service';
 
 @Component({
   selector: 'app-to-do-create',
@@ -6,19 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do-create.component.css']
 })
 export class ToDoCreateComponent implements OnInit {
-  // public items = [Date d, Text t, Text ds];
-  public newTask;
-  public addToList() {
-    if (this.newTask == '') {
-    }
-    else {
-        this.items.d.push(this.newTask.d);
-        this.newTask = '';
-    }
-}
-  constructor() { }
+  i;
+  d;
+  t;
+  ds;
+
+  constructor(private database: TodoDatabaseService) { }
 
   ngOnInit(): void {
+  }
+
+  addToList(){
+    this.database.addTaskToList(this.i, this.d, this.t, this.ds);
   }
 
 }

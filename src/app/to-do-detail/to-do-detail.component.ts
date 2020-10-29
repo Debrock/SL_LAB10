@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoDatabaseService } from '../todo-database.service';
 
 @Component({
   selector: 'app-to-do-detail',
@@ -7,13 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToDoDetailComponent implements OnInit {
 
-//   public deleteTask(index) {
-//     this.items.splice(index, 1);
-// }
+  TodoList;
 
-  constructor() { }
+  displayedColumns: string[] = ['id', 'Date', 'Task', 'Description', 'Actions']
+
+  constructor(private list: TodoDatabaseService) { }
 
   ngOnInit(): void {
+    this.TodoList = this.list.TodoList;
   }
 
+
+  onDelete(index) {
+    this.TodoList.deleteTask(index);
+  }
 }
+
+
+
