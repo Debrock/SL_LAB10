@@ -6,10 +6,11 @@ import { TodoDatabaseService } from '../todo-database.service';
   templateUrl: './to-do-detail.component.html',
   styleUrls: ['./to-do-detail.component.css']
 })
+
 export class ToDoDetailComponent implements OnInit {
 
+  index;
   TodoList;
-
   displayedColumns: string[] = ['id', 'Date', 'Task', 'Description', 'Actions']
 
   constructor(private list: TodoDatabaseService) { }
@@ -17,10 +18,8 @@ export class ToDoDetailComponent implements OnInit {
   ngOnInit(): void {
     this.TodoList = this.list.TodoList;
   }
-
-
-  onDelete(index) {
-    this.TodoList.deleteTask(index);
+  public deleteTask(index) {
+    this.TodoList.splice(index, 1);
   }
 }
 

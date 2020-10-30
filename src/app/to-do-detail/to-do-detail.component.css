@@ -8,4 +8,30 @@ h1{
 }
 table {
     width: 100%;
-  }
+}
+.deletet{
+    margin-left: 40%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.deletet h3{
+    margin-top: 7px;
+}
+.tab {
+    display: inline-block;
+    margin-left: 135px;
+}
+
+.tab2 {
+    display: inline-block;
+    margin-left: 160px;
+}
+.tab3 {
+    display: inline-block;
+    margin-left: 280px;
+}
+
+li{
+    margin-left: 45px;
+}
